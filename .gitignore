@@ -1,0 +1,7 @@
+/vendor/*
+/config/app.php
+/tmp/*
+/logs/*
+/webroot/error_log
+*._.DS_Store
+/config/Migrations/schema-dump-default.lock
