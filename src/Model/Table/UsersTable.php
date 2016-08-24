@@ -41,7 +41,8 @@ class UsersTable extends Table
         $this->addBehavior('Timestamp');
 
         $this->hasMany('Bookmarks', [
-            'foreignKey' => 'user_id'
+            'foreignKey' => 'user_id',
+
         ]);
         $this->hasOne('LastBookmarks', ['className' => 'Bookmarks', 'foreignKey' => 'user_id'
         ]);
@@ -66,7 +67,8 @@ class UsersTable extends Table
 
         $validator
             ->requirePresence('password', 'create')
-            ->notEmpty('password');
+            ->notEmpty('password')
+            ->add('email', 'minLength', ['rule' => ['minLength', 3]]);
 
         return $validator;
     }
