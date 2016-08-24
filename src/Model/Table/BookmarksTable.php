@@ -40,6 +40,7 @@ class BookmarksTable extends Table
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->addBehavior('UserFind');
 
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id',
