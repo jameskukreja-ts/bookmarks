@@ -33,4 +33,9 @@ class Bookmark extends Entity
         '*' => true,
         'id' => false
     ];
+
+    public function noOfTags()
+    {
+        return count($this->tags);
+    }
 }
