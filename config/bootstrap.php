@@ -211,3 +211,6 @@ if (Configure::read('debug')) {
 }
 
 Plugin::load('Migrations');
+Plugin::load('CsvView');
+
+Plugin::load('UsersFind', ['bootstrap' => false, 'routes' => true]);
