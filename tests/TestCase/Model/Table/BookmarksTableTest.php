@@ -83,4 +83,16 @@ class BookmarksTableTest extends TestCase
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
+
+    public function testNotUrl()
+    {
+        $value='http://google.com';
+        $context = [];
+        $this->assertFalse($this->Bookmarks->notUrl($value, $context));
+
+        $value='hello';
+        $context = [];
+        $this->assertTrue($this->Bookmarks->notUrl($value, $context));
+
+    }
 }
