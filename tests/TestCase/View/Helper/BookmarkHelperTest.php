@@ -51,4 +51,15 @@ class BookmarkHelperTest extends TestCase
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
+
+    public function testUrl()
+    {
+        $data = ['title' => 'Title', 'url' => 'http://test.com'];
+        $bookmark = new \App\Model\Entity\Bookmark($data);
+        $output = $this->Bookmark->url($bookmark);
+        $expected = '<a href="http://test.com" title="Title">http://test.com</a>';
+        $this->assertEquals($expected, $output);
+
+
+    }
 }
