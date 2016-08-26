@@ -47,7 +47,8 @@ class AppController extends Controller
 
             'authenticate' => [
             'Form' => ['fields' => ['username' => 'email']] 
-            ]
+            ],
+            'authorize' => ['Controller']
 
             ]);
     }
@@ -66,4 +67,9 @@ class AppController extends Controller
             $this->set('_serialize', true);
         }
     }
+
+    public function isAuthorized($user)
+    {
+        return true;
+    } 
 }

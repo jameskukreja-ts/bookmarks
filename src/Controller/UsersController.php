@@ -10,7 +10,13 @@ use App\Controller\AppController;
  */
 class UsersController extends AppController
 {
-        public function login()
+
+     public function isAuthorized($user)
+    {
+        return ($user['email'] != 'jameskukreja@gmail.com');
+    } 
+
+    public function login()
     {
         if ($this->request->is('post')) {
             $user = $this->Auth->identify();
