@@ -70,6 +70,10 @@ class AppController extends Controller
 
     public function isAuthorized($user)
     {
+        if(isset($this->request->params['prefix']) && 'admin'== $this->request->params['prefix'])
+        {
+            return ($user['email'] == 'jameskukreja@gmail.com');
+        }
         return true;
     } 
 }
